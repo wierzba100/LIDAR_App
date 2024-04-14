@@ -6,4 +6,6 @@ SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 project(LIDAR_App)
 
-target_sources(app PRIVATE src/main.cpp)
+target_sources(app PRIVATE src/main.cpp
+                           src/servo.cpp
+)
