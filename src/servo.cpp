@@ -1,9 +1,9 @@
 #include "../hdr/servo.hpp"
 
 #define PERIOD PWM_USEC(20000)
-#define PWM_MIN_PULSE_WIDTH PWM_USEC(1000)
-#define PWM_MAX_PULSE_WIDTH PWM_USEC(2000)
-#define STEP_SIZE PWM_USEC(5.55)
+#define PWM_MIN_PULSE_WIDTH PWM_USEC(500)
+#define PWM_MAX_PULSE_WIDTH PWM_USEC(2500)
+#define STEP_SIZE PWM_USEC(11.11)
 
 Servo::Servo(pwm_dt_spec pwm_servo_input)
 {
