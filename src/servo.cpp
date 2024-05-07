@@ -18,20 +18,27 @@ void Servo::Callib()
 
 void Servo::GoTo(uint32_t angle)
 {
-    uint32_t pulse_width = (angle * (PWM_MAX_PULSE_WIDTH - PWM_MIN_PULSE_WIDTH) / 180) + PWM_MIN_PULSE_WIDTH;
-    pwm_set_dt(&pwm_servo, PERIOD, pulse_width);
-    current_pulse = pulse_width;
+    current_pulse = (angle * (PWM_MAX_PULSE_WIDTH - PWM_MIN_PULSE_WIDTH) / 180) + PWM_MIN_PULSE_WIDTH;
+    pwm_set_dt(&pwm_servo, PERIOD, current_pulse);
 }
 
 
 void Servo::StepLeft()
 {
     current_pulse = current_pulse + STEP_SIZE;
+    if (current_pulse > PWM_MIN_PULSE_WIDTH)
+    {
+        current_pulse = PWM_MAX_PULSE_WIDTH;
+    }
     pwm_set_dt(&pwm_servo, PERIOD, current_pulse);
 }
 
 void Servo::StepRight()
 {
     current_pulse = current_pulse - STEP_SIZE;
+    if (current_pulse < PWM_MIN_PULSE_WIDTH)
+    {
+        current_pulse = PWM_MIN_PULSE_WIDTH;
+    }
     pwm_set_dt(&pwm_servo, PERIOD, current_pulse);
 }
