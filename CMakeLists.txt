@@ -8,4 +8,5 @@ project(LIDAR_App)
 
 target_sources(app PRIVATE src/main.cpp
                            src/servo.cpp
+                           src/lidar.cpp
 )
