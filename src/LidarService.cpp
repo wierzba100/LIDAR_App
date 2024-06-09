@@ -7,7 +7,7 @@
 #include <vector>
 #include <functional>
 
-#include "LidarService.h"
+#include "../hdr/LidarService.h"
 
 LOG_MODULE_REGISTER(ble_lidar_service, LOG_LEVEL_INF);
 

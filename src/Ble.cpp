@@ -8,8 +8,8 @@
 
 #include <stdexcept>
 
-#include "Ble.h"
-#include "LidarService.h"
+#include "../hdr/Ble.h"
+#include "../hdr/LidarService.h"
 
 LOG_MODULE_REGISTER(ble, LOG_LEVEL_INF);
 
