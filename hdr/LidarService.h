@@ -18,8 +18,6 @@
 #define BT_UUID_LDS_CFG BT_UUID_DECLARE_128(BT_UUID_LDS_CFG_VAL)
 
 namespace LidarService{
-        static uint16_t val = 0;
-
         /** @brief Initialize the Lidar Data Service.
         *
         * This function allows to send notification with data

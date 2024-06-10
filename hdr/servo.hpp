@@ -3,6 +3,9 @@
 
 #include <zephyr/drivers/pwm.h>
 
+#define SERVO_X_RANGE 181
+#define SERVO_Y_RANGE 91
+
 class Servo {
 private:
     struct pwm_dt_spec pwm_servo;
