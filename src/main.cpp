@@ -92,8 +92,8 @@ int main(void)
 				{
 					if(lidar->read_data(&distance, &strength))
 					{
-						LOG_INF("Distance: %d cm\n", distance);
-						LOG_INF("Strength: %d \n", strength);
+						LOG_INF("Distance: %d cm", distance);
+						LOG_INF("Strength: %d ", strength);
 
 						data.bytes[0] = (distance >> 8) & 0xFF;
 						data.bytes[1] = distance & 0xFF;
@@ -117,6 +117,8 @@ int main(void)
 			}
 			isConnected = false;
 		}
+		servo_x->Callib();
+		servo_y->GoTo(45);
 		k_msleep(1000);
 	}
 }
